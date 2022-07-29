@@ -18,7 +18,7 @@ const SearchInput = ({
       clearTimeout(timer);
     }
     const newTimer = setTimeout(async () => {
-      if (input !== '') {
+      if (e.target.value !== '') {
         const response = await getCats(e.target.value, setLoading);
         setCats(response);
       }
