@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const Section = styled.section`
   display: flex;
   justify-content: center;
-  margin: 50px 0 10px;
+  margin: 0 0 5px;
   height: 75px;
 `;
 

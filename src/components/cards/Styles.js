@@ -12,5 +12,21 @@ export const Section = styled.section`
     width: 328px;
     height: 500px;
     object-fit: cover;
+    @media screen and (max-width: 992px) {
+      width: 270px;
+      height: 370px;
+    }
+    @media screen and (max-width: 768px) {
+      width: 250px;
+      height: 250px;
+    }
+    @media screen and (max-width: 615px) {
+      width: 400px;
+      height: 250px;
+    }
+    @media screen and (max-width: 450px) {
+      width: 300px;
+      height: 250px;
+    }
   }
 `;

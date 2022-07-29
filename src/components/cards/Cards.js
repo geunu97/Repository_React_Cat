@@ -1,20 +1,25 @@
 import { Article, Section } from './Styles';
 import { getCat } from '../../apis/Api';
 
-const Cards = ({ cats, setCat, setOpenModal }) => {
+const Cards = ({ cats, setCat, setOpenModal, setLoading }) => {
+  if (!cats) return <h2>검색 결과가 없습니다.</h2>;
+
   const onClickImg = async (id) => {
-    const response = await getCat(id);
+    const response = await getCat(id, setLoading);
     setCat(response);
     setOpenModal(true);
   };
   return (
     <Article>
-      {cats &&
-        cats.map((item, index) => (
-          <Section key={index} onClick={() => onClickImg(item.id)}>
-            <img src={item.url} alt={item.name} />
-          </Section>
-        ))}
+      {cats.map((item, index) => (
+        <Section
+          key={index}
+          onClick={() => onClickImg(item.id)}
+          title={item.name}
+        >
+          <img src={item.url} alt={item.name} />
+        </Section>
+      ))}
     </Article>
   );
 };

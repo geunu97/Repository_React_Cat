@@ -9,3 +9,49 @@ body * {
   margin: 0;
   font-family: Goyang;
 }
+
+/* OS라이트모드일 때 기본값 */
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: white;
+    color: black;
+  }
+  .modal {
+    background-color: white;
+    color: black;
+  }
+}
+
+/* OS다크모드일 때 기본값 */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #000;
+    color: white;
+  }   
+  .modal {
+    background-color: black;
+    color: white;
+  }
+}
+
+/* 다크모드일 때 */
+.dark {
+  background-color: black;
+  color:white;
+}
+
+.dark .modal{
+  background-color: black;
+  color: white;
+}
+
+/* 라이트모드일 때 */
+.light {
+  background-color: white;
+  color: black;
+}
+
+.light .modal{
+  background-color: white;
+  color: black;
+}

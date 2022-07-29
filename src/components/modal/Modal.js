@@ -1,18 +1,21 @@
 import { Block, ModalContainer } from './Styles';
 
 const Modal = ({ cat, setOpenModal }) => {
+  if (!cat) return;
+  const { name, url, temperament, origin } = cat;
+
   return (
-    <Block>
-      <ModalContainer>
+    <Block className="backgroundModal">
+      <ModalContainer className="modal">
         <section className="top">
-          <div>{cat.name}</div>
+          <div>{name}</div>
           <div className="icon" onClick={() => setOpenModal(false)}>
             X
           </div>
         </section>
-        <img src={cat.url} alt={cat.name} />
-        <div>성격: {cat.temperament}</div>
-        <div>태생: {cat.origin}</div>
+        <img src={url} alt={name} />
+        <div>성격: {temperament}</div>
+        <div>태생: {origin}</div>
       </ModalContainer>
     </Block>
   );

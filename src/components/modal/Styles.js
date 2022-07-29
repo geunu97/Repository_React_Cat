@@ -1,4 +1,14 @@
 import styled from '@emotion/styled';
+import { keyframes } from '@emotion/react';
+
+const fadeIn = keyframes`
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+`;
 
 export const Block = styled.div`
   position: fixed;
@@ -19,9 +29,12 @@ export const ModalContainer = styled.section`
   height: 80%;
   max-height: 80%;
   padding: 10px;
-  background: white;
   border-radius: 10px;
   font-size: 13px;
+  animation: ${fadeIn} 0.5s;
+  @media screen and (max-width: 768px) {
+    width: 90%;
+  }
 
   .top {
     display: flex;

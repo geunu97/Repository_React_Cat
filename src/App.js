@@ -1,22 +1,55 @@
 import SearchInput from './components/searchInput/SearchInput';
 import Cards from './components/cards/Cards';
 import Modal from './components/modal/Modal';
+import Records from './components/records/Records';
 import { Container, Header, Main } from './styles/styles';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import DarkMode from './components/darkMode/DarkMode';
 
 function App() {
   const [input, setInput] = useState('');
   const [cats, setCats] = useState(null);
   const [cat, setCat] = useState(null);
+
   const [openmodal, setOpenModal] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [records, setRecord] = useState([]);
+
+  useEffect(() => {
+    setCats(JSON.parse(localStorage.getItem('data')));
+  }, []);
+
+  document.addEventListener('keydown', (e) => {
+    if (openmodal && e.key === 'Escape') setOpenModal(false);
+  });
+
+  document.addEventListener('click', (e) => {
+    if (openmodal && e.target === document.querySelector('.backgroundModal'))
+      setOpenModal(false);
+  });
 
   return (
     <Container>
       <Header>
-        <SearchInput input={input} setInput={setInput} setCats={setCats} />
+        <DarkMode />
+        {loading && <h2>로딩중...</h2>}
+        <SearchInput
+          input={input}
+          setInput={setInput}
+          setCats={setCats}
+          setLoading={setLoading}
+          records={records}
+          setRecord={setRecord}
+        />
+        {records.length > 0 && <Records records={records} />}
       </Header>
       <Main>
-        <Cards cats={cats} setCat={setCat} setOpenModal={setOpenModal} />
+        <Cards
+          cats={cats}
+          setCat={setCat}
+          setOpenModal={setOpenModal}
+          setLoading={setLoading}
+        />
         {openmodal && <Modal cat={cat} setOpenModal={setOpenModal} />}
       </Main>
     </Container>
