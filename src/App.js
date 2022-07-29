@@ -1,14 +1,25 @@
 import SearchInput from './components/searchInput/SearchInput';
-import { Body, Header, Main } from './styles/styles';
+import Cards from './components/cards/Cards';
+import Modal from './components/modal/Modal';
+import { Container, Header, Main } from './styles/styles';
+import { useState } from 'react';
 
 function App() {
+  const [input, setInput] = useState('');
+  const [cats, setCats] = useState(null);
+  const [cat, setCat] = useState(null);
+  const [openmodal, setOpenModal] = useState(false);
+
   return (
-    <Body>
+    <Container>
       <Header>
-        <SearchInput />
+        <SearchInput input={input} setInput={setInput} setCats={setCats} />
       </Header>
-      <Main>12345</Main>
-    </Body>
+      <Main>
+        <Cards cats={cats} setCat={setCat} setOpenModal={setOpenModal} />
+        {openmodal && <Modal cat={cat} setOpenModal={setOpenModal} />}
+      </Main>
+    </Container>
   );
 }
 

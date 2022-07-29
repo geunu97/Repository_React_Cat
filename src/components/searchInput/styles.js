@@ -1,15 +1,22 @@
 import styled from '@emotion/styled';
 
-export const SearchInputBlock = styled.section`
+export const Section = styled.section`
   display: flex;
   justify-content: center;
-  margin-top: 50px;
-  height: 80px;
+  margin: 50px 0 10px;
+  height: 75px;
+`;
+
+export const Form = styled.form`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex: 1;
 `;
 
 export const Input = styled.input`
-  width: 80%;
-  margin-right: 30px;
+  width: 100%;
+  margin-right: 20px;
   font-size: 40px;
   padding: 0 15px;
 `;
