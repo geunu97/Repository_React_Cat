@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { getCats, getRandomCats } from '../../apis/Api';
 import { Section, Form, Input, Button } from './Styles';
 
@@ -9,8 +10,21 @@ const SearchInput = ({
   records,
   setRecord,
 }) => {
-  const onChangeInput = (e) => {
+  const [timer, setTimer] = useState(0);
+
+  const onDebounce = async (e) => {
     setInput(e.target.value);
+    if (timer) {
+      clearTimeout(timer);
+    }
+    const newTimer = setTimeout(async () => {
+      if (input !== '') {
+        const response = await getCats(e.target.value, setLoading);
+        setCats(response);
+      }
+    }, 500);
+
+    setTimer(newTimer);
   };
 
   const onClickInput = (e) => {
@@ -43,7 +57,7 @@ const SearchInput = ({
       <Form onSubmit={onSubmitForm}>
         <Input
           placeholder="고양이를 검색해보세요."
-          onChange={onChangeInput}
+          onChange={onDebounce}
           value={input}
           autoFocus
           onClick={onClickInput}
