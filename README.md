@@ -1,70 +1,22 @@
-# Getting Started with Create React App
+<h1 align="center">고양이 사진관</h1>
+<p align="center"><a href="https://github.com/geunu97/Repository_VanillaJS_Cat">VanillaJS 고양이 사진관</a>을 React로 전환하여 개발하였습니다.</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<br>
 
-## Available Scripts
+## 전환한 이유
 
-In the project directory, you can run:
+- 바닐라 자바스크립트와 리액트의 차이를 직접 경험해보고 싶었습니다.
 
-### `npm start`
+## 좋았던 점
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 리액트의 쉽고 간편한 JSX문법을 사용하여 컴포넌트를 개발하였더니 <a href="https://github.com/geunu97/Repository_VanillaJS_Cat">VanillaJS 고양이 사진관</a>보다 작업 속도가 2주 정도 향상됐습니다.
+- <a href="https://github.com/geunu97/Repository_VanillaJS_Cat">VanillaJS 고양이 사진관</a>에서 class로 개발했던 것을, 리액트에서는 함수로 개발하였는데 더 쉽고 간편하다고 느꼈습니다.
+- 기본적으로 state와 props를 지원해주므로, 상태관리 작업이 편리했습니다.
+- 전체적인 오류를 확인할 기회가 생겼습니다.
+  - 기존에 네트워크 요청의 실패에 대한 처리를 안해줘서 발생한 오류를 발견하여 처리를 했습니다.
+  - Input 공백 입력 시 발생한 오류를 발견하여 처리를 했습니다.
+- 기존에 아쉬웠던 UI를 조금 더 이쁘게 다루는 기회가 됐습니다.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 나빴던 점
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- 성능 측정 도구인 Profiler를 사용하여 바닐라 자바스크립트와 리액트의 렌더링, 리렌더링 속도 수치를 비교하고 싶었지만, Profiler는 리액트만 지원해줘서 아쉬웠습니다.
