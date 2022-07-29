@@ -20,3 +20,7 @@
 ## 나빴던 점
 
 - 성능 측정 도구인 Profiler를 사용하여 바닐라 자바스크립트와 리액트의 렌더링, 리렌더링 속도 수치를 비교하고 싶었지만, Profiler는 리액트만 지원해줘서 아쉬웠습니다.
+
+## 확인
+
+- <a href="https://teal-crisp-c1fbdc.netlify.app">데모사이트</a>
