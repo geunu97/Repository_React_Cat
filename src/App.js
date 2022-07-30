@@ -16,7 +16,10 @@ function App() {
   const [records, setRecord] = useState([]);
 
   useEffect(() => {
-    setCats(JSON.parse(localStorage.getItem('data')));
+    const data = localStorage.getItem('data');
+    if (data && data !== 'undefined') {
+      setCats(JSON.parse(data));
+    }
   }, []);
 
   document.addEventListener('keydown', (e) => {
@@ -41,7 +44,14 @@ function App() {
           records={records}
           setRecord={setRecord}
         />
-        {records.length > 0 && <Records records={records} />}
+        {records.length > 0 && (
+          <Records
+            records={records}
+            setCats={setCats}
+            setLoading={setLoading}
+            setInput={setInput}
+          />
+        )}
       </Header>
       <Main>
         <Cards

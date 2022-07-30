@@ -22,7 +22,7 @@ const SearchInput = ({
         const response = await getCats(e.target.value, setLoading);
         setCats(response);
       }
-    }, 500);
+    }, 600);
 
     setTimer(newTimer);
   };

@@ -13,4 +13,8 @@ export const Section = styled.section`
 
 export const Card = styled.section`
   margin-right: 10px;
+  &:hover {
+    cursor: pointer;
+    color: black;
+  }
 `;
