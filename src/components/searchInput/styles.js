@@ -19,6 +19,9 @@ export const Input = styled.input`
   margin-right: 20px;
   font-size: 40px;
   padding: 0 15px;
+  @media screen and (max-width: 768px) {
+    font-size: 20px;
+  }
 `;
 
 export const Button = styled.button`
