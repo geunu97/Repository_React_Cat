@@ -19,6 +19,7 @@ export const Input = styled.input`
   margin-right: 20px;
   font-size: 40px;
   padding: 0 15px;
+  flex: 1;
   @media screen and (max-width: 768px) {
     font-size: 20px;
   }
@@ -31,4 +32,8 @@ export const Button = styled.button`
   border-radius: 10px;
   padding: 10px 30px;
   cursor: pointer;
+  margin-right: 10px;
+  @media screen and (max-width: 768px) {
+    padding: 6px 15px;
+  }
 `;

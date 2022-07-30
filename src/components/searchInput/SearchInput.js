@@ -62,8 +62,11 @@ const SearchInput = ({
           autoFocus
           onClick={onClickInput}
         />
+        <Button type="submit" className="searchbutton">
+          입력
+        </Button>
       </Form>
-      <Button onClick={onClickButton} className="randombutton">
+      <Button onClick={onClickButton} className="searchbutton">
         랜덤 버튼
       </Button>
     </Section>

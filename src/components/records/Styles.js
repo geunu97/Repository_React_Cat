@@ -9,12 +9,15 @@ export const Section = styled.section`
   font-weight: 590;
   width: 98%;
   margin: 0 auto 10px;
+  @media screen and (max-width: 768px) {
+    font-size: 20px;
+  }
 `;
 
 export const Card = styled.section`
   margin-right: 10px;
   &:hover {
     cursor: pointer;
-    color: black;
+    color: skyblue;
   }
 `;

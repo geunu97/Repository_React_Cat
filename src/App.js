@@ -35,7 +35,6 @@ function App() {
     <Container>
       <Header>
         <DarkMode />
-        {loading && <h2>로딩중...</h2>}
         <SearchInput
           input={input}
           setInput={setInput}
@@ -44,6 +43,7 @@ function App() {
           records={records}
           setRecord={setRecord}
         />
+        {loading && <h2>로딩중...</h2>}
         {records.length > 0 && (
           <Records
             records={records}
