@@ -20,6 +20,9 @@ body * {
     background-color: white;
     color: black;
   }
+  .randombutton {
+    border: none;
+  }
 }
 
 /* OS다크모드일 때 기본값 */
@@ -32,6 +35,9 @@ body * {
     background-color: black;
     color: white;
   }
+  .randombutton {
+    border: 1px solid white;
+  }
 }
 
 /* 다크모드일 때 */
@@ -40,9 +46,13 @@ body * {
   color:white;
 }
 
-.dark .modal{
+.dark .modal {
   background-color: black;
   color: white;
+}
+
+.dark .randombutton {
+  border: 1px solid white;
 }
 
 /* 라이트모드일 때 */
@@ -54,4 +64,8 @@ body * {
 .light .modal{
   background-color: white;
   color: black;
+}
+
+.light .randombutton {
+  border: none;
 }

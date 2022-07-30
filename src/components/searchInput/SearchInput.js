@@ -63,7 +63,9 @@ const SearchInput = ({
           onClick={onClickInput}
         />
       </Form>
-      <Button onClick={onClickButton}>랜덤 버튼</Button>
+      <Button onClick={onClickButton} className="randombutton">
+        랜덤 버튼
+      </Button>
     </Section>
   );
 };

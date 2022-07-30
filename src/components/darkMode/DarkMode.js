@@ -1,4 +1,4 @@
-import { Section } from './Styles';
+import { Label } from './Styles';
 
 const DarkMode = () => {
   const onClickDarkMode = (e) => {
@@ -23,9 +23,10 @@ const DarkMode = () => {
   };
 
   return (
-    <Section>
+    <Label>
       <input type="checkbox" onClick={onClickDarkMode} />
-    </Section>
+      <span class="onoff-switch"></span>
+    </Label>
   );
 };
 
