@@ -2,6 +2,7 @@ import SearchInput from './components/searchInput/SearchInput';
 import Cards from './components/cards/Cards';
 import Modal from './components/modal/Modal';
 import Records from './components/records/Records';
+import Loading from './components/loading/Loading';
 import { Container, Header, Main } from './styles/styles';
 import { useEffect, useState } from 'react';
 import DarkMode from './components/darkMode/DarkMode';
@@ -43,7 +44,7 @@ function App() {
           records={records}
           setRecord={setRecord}
         />
-        {loading && <h2>로딩중...</h2>}
+        {loading && <Loading />}
         {records.length > 0 && (
           <Records
             records={records}
