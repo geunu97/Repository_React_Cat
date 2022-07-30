@@ -25,7 +25,7 @@ const DarkMode = () => {
   return (
     <Label>
       <input type="checkbox" onClick={onClickDarkMode} />
-      <span class="onoff-switch"></span>
+      <span className="onoff-switch" />
     </Label>
   );
 };
