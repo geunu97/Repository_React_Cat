@@ -20,8 +20,8 @@ const Records = ({ records, setCats, setLoading, setInput }) => {
   return (
     <Section>
       {records.length > 0 &&
-        records.map((item) => (
-          <Card key={item} onClick={() => onClickRecords(item)}>
+        records.map((item, index) => (
+          <Card key={index} onClick={() => onClickRecords(item)}>
             {item}
           </Card>
         ))}

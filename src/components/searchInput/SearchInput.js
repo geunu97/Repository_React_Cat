@@ -47,8 +47,17 @@ const SearchInput = ({
           const response = await getCats(input, setLoading);
           setCats(response);
           localStorage.setItem('data', JSON.stringify(response));
-          setRecord(records.filter((item) => item !== input).concat(input));
-          if (records.length > 5) setRecord(records.shift());
+          if (records.length < 5) {
+            console.log(records);
+            setRecord(records.filter((item) => item !== input).concat(input));
+            console.log(records);
+          } else
+            setRecord(
+              records
+                .filter((item) => item !== input)
+                .concat(input)
+                .slice(1),
+            );
         } catch {
           console.log('input 에러');
         }
