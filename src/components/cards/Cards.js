@@ -1,8 +1,8 @@
 import { Article, Section } from './Styles';
 import { getCat } from '../../apis/Api';
 
-const Cards = ({ cats, setCat, setOpenModal, setLoading }) => {
-  if (cats.length === 0) return <h2>검색 결과가 없습니다.</h2>;
+const Cards = ({ currentPosts, setCat, setOpenModal, setLoading }) => {
+  if (currentPosts.length === 0) return <h2>검색 결과가 없습니다.</h2>;
 
   const onClickImg = async (id) => {
     const response = await getCat(id, setLoading);
@@ -13,7 +13,7 @@ const Cards = ({ cats, setCat, setOpenModal, setLoading }) => {
   };
   return (
     <Article>
-      {cats.map((item, index) => (
+      {currentPosts.map((item, index) => (
         <Section
           key={index}
           onClick={() => onClickImg(item.id)}

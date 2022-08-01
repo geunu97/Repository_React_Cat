@@ -1,11 +1,12 @@
+import { Container, Header, Main } from './styles/styles';
+import { useEffect, useState } from 'react';
+import DarkMode from './components/darkMode/DarkMode';
 import SearchInput from './components/searchInput/SearchInput';
 import Cards from './components/cards/Cards';
 import Modal from './components/modal/Modal';
 import Records from './components/records/Records';
 import Loading from './components/loading/Loading';
-import { Container, Header, Main } from './styles/styles';
-import { useEffect, useState } from 'react';
-import DarkMode from './components/darkMode/DarkMode';
+import Pagination from './components/pagination/Pagination';
 
 function App() {
   const [input, setInput] = useState('');
@@ -15,6 +16,14 @@ function App() {
   const [openmodal, setOpenModal] = useState(false);
   const [loading, setLoading] = useState(false);
   const [records, setRecord] = useState([]);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const postPerPage = 8;
+  const indexOfLastPost = currentPage * postPerPage;
+  const indexOfFirstPost = indexOfLastPost - postPerPage;
+  const currentPosts = cats.slice(indexOfFirstPost, indexOfLastPost);
+
+  const [pageIndex, setPageIndex] = useState(0);
 
   useEffect(() => {
     const data = localStorage.getItem('data');
@@ -43,6 +52,8 @@ function App() {
           setLoading={setLoading}
           records={records}
           setRecord={setRecord}
+          setCurrentPage={setCurrentPage}
+          setPageIndex={setPageIndex}
         />
         {loading && <Loading />}
         {records.length > 0 && (
@@ -51,15 +62,25 @@ function App() {
             setCats={setCats}
             setLoading={setLoading}
             setInput={setInput}
+            setCurrentPage={setCurrentPage}
+            setPageIndex={setPageIndex}
           />
         )}
       </Header>
       <Main>
         <Cards
-          cats={cats}
+          currentPosts={currentPosts}
           setCat={setCat}
           setOpenModal={setOpenModal}
           setLoading={setLoading}
+        />
+        <Pagination
+          postPerPage={postPerPage}
+          totalPosts={cats.length}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          pageIndex={pageIndex}
+          setPageIndex={setPageIndex}
         />
         {openmodal && <Modal cat={cat} setOpenModal={setOpenModal} />}
       </Main>
