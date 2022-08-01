@@ -68,7 +68,7 @@ const SearchInput = ({
 
   const onClickButton = useCallback(async () => {
     const response = await getRandomCats(setLoading);
-    if (response.status === 200) setCats(response.data.data);
+    if (response && response.status === 200) setCats(response.data.data);
   }, [setCats, setLoading]);
 
   return (
