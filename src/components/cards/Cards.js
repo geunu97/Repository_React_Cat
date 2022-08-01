@@ -2,12 +2,14 @@ import { Article, Section } from './Styles';
 import { getCat } from '../../apis/Api';
 
 const Cards = ({ cats, setCat, setOpenModal, setLoading }) => {
-  if (!cats) return <h2>검색 결과가 없습니다.</h2>;
+  if (cats.length === 0) return <h2>검색 결과가 없습니다.</h2>;
 
   const onClickImg = async (id) => {
     const response = await getCat(id, setLoading);
-    setCat(response);
-    setOpenModal(true);
+    if (response && response.status === 200) {
+      setCat(response.data.data);
+      setOpenModal(true);
+    }
   };
   return (
     <Article>

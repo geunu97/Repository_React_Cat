@@ -9,7 +9,7 @@ import DarkMode from './components/darkMode/DarkMode';
 
 function App() {
   const [input, setInput] = useState('');
-  const [cats, setCats] = useState(null);
+  const [cats, setCats] = useState([]);
   const [cat, setCat] = useState(null);
 
   const [openmodal, setOpenModal] = useState(false);
