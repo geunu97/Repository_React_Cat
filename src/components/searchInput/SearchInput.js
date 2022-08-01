@@ -10,6 +10,8 @@ const SearchInput = ({
   setLoading,
   records,
   setRecord,
+  setCurrentPage,
+  setPageIndex,
 }) => {
   const [timer, setTimer] = useState(0);
 
@@ -22,13 +24,15 @@ const SearchInput = ({
       const newTimer = setTimeout(async () => {
         if (e.target.value !== '') {
           const response = await getCats(e.target.value, setLoading);
+          setCurrentPage(1);
+          setPageIndex(0);
           if (response && response.status === 200) setCats(response.data.data);
         }
       }, 600);
 
       setTimer(newTimer);
     },
-    [setCats, setInput, setLoading, timer],
+    [setCats, setCurrentPage, setInput, setLoading, setPageIndex, timer],
   );
 
   const onClickInput = useCallback(
@@ -45,6 +49,8 @@ const SearchInput = ({
       else {
         try {
           const response = await getCats(input, setLoading);
+          setCurrentPage(1);
+          setPageIndex(0);
           if (response && response.status === 200) {
             setCats(response.data.data);
             localStorage.setItem('data', JSON.stringify(response.data.data));
@@ -63,13 +69,23 @@ const SearchInput = ({
         }
       }
     },
-    [input, records, setCats, setLoading, setRecord],
+    [
+      input,
+      records,
+      setCats,
+      setCurrentPage,
+      setLoading,
+      setPageIndex,
+      setRecord,
+    ],
   );
 
   const onClickButton = useCallback(async () => {
     const response = await getRandomCats(setLoading);
+    setCurrentPage(1);
+    setPageIndex(0);
     if (response && response.status === 200) setCats(response.data.data);
-  }, [setCats, setLoading]);
+  }, [setCats, setCurrentPage, setLoading, setPageIndex]);
 
   return (
     <Section>
