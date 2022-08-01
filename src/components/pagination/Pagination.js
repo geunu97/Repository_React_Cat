@@ -6,6 +6,7 @@ const Pagination = ({
   setCurrentPage,
   pageIndex,
   setPageIndex,
+  currentPage,
 }) => {
   const pageNumbers = [];
   for (let i = 1; i <= Math.ceil(totalPosts / postPerPage); i++) {
@@ -27,7 +28,11 @@ const Pagination = ({
             &lt;
           </Button>
           {DivPageNumbers[pageIndex].map((number) => (
-            <Button key={number} onClick={() => setCurrentPage(number)}>
+            <Button
+              key={number}
+              onClick={() => setCurrentPage(number)}
+              current={currentPage === number ? true : false}
+            >
               {number}
             </Button>
           ))}

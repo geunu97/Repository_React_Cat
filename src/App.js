@@ -77,6 +77,7 @@ function App() {
         <Pagination
           postPerPage={postPerPage}
           totalPosts={cats.length}
+          currentPage={currentPage}
           setCurrentPage={setCurrentPage}
           pageIndex={pageIndex}
           setPageIndex={setPageIndex}

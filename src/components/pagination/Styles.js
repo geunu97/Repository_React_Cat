@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 
 export const Section = styled.section`
   display: flex;
@@ -13,20 +14,27 @@ export const Button = styled.button`
   border: none;
   margin: 0 7px;
 
-  &:active {
-    color: red;
-  }
-
   &:enabled {
     color: #79bbca;
+    &:hover {
+      border-radius: 50%;
+      background-color: #79bbca;
+      color: white;
+      cursor: pointer;
+    }
   }
+
   &:disabled {
     color: #cfc8c8;
   }
-  &:enabled:hover {
-    border-radius: 50%;
-    background-color: #79bbca;
-    color: white;
-    cursor: pointer;
-  }
+
+  ${(props) =>
+    props.current &&
+    css`
+      &:enabled {
+        color: white;
+        border-radius: 50%;
+        background-color: #79bbca;
+      }
+    `}
 `;
