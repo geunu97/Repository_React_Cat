@@ -6,8 +6,10 @@ const Cards = ({ cats, setCat, setOpenModal, setLoading }) => {
 
   const onClickImg = async (id) => {
     const response = await getCat(id, setLoading);
-    setCat(response);
-    setOpenModal(true);
+    if (response.status === 200) {
+      setCat(response.data.data);
+      setOpenModal(true);
+    }
   };
   return (
     <Article>

@@ -20,7 +20,7 @@ export const getCat = async (id, setLoading) => {
     setLoading(true);
     const response = await axios.get(`/api/cats/${id}`);
     setLoading(false);
-    return response.data.data;
+    return response;
   } catch {
     setLoading(false);
     alert('에러가 발생했습니다. 다시 클릭해 주세요');
@@ -32,7 +32,7 @@ export const getRandomCats = async (setLoading) => {
     setLoading(true);
     const response = await axios.get('/api/cats/random50');
     setLoading(false);
-    return response.data.data;
+    return response;
   } catch {
     setLoading(false);
     alert('에러가 발생했습니다. 다시 클릭해 주세요');
