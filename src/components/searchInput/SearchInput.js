@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { getCats, getRandomCats } from '../../apis/Api';
 import { Section, Form, Input, Button } from './Styles';
+import { useCallback } from 'react';
 
 const SearchInput = ({
   input,
@@ -12,45 +13,63 @@ const SearchInput = ({
 }) => {
   const [timer, setTimer] = useState(0);
 
-  const onDebounce = async (e) => {
-    setInput(e.target.value);
-    if (timer) {
-      clearTimeout(timer);
-    }
-    const newTimer = setTimeout(async () => {
-      if (e.target.value !== '') {
-        const response = await getCats(e.target.value, setLoading);
-        setCats(response);
+  const onDebounce = useCallback(
+    async (e) => {
+      setInput(e.target.value);
+      if (timer) {
+        clearTimeout(timer);
       }
-    }, 600);
+      const newTimer = setTimeout(async () => {
+        if (e.target.value !== '') {
+          const response = await getCats(e.target.value, setLoading);
+          setCats(response);
+        }
+      }, 600);
 
-    setTimer(newTimer);
-  };
+      setTimer(newTimer);
+    },
+    [setCats, setInput, setLoading, timer],
+  );
 
-  const onClickInput = (e) => {
-    if (e.target.value !== '') setInput('');
-  };
+  const onClickInput = useCallback(
+    (e) => {
+      if (e.target.value !== '') setInput('');
+    },
+    [setInput],
+  );
 
-  const onSubmitForm = async (e) => {
-    e.preventDefault();
-    if (input === '') alert('검색어를 입력해주세요.');
-    else {
-      try {
-        const response = await getCats(input, setLoading);
-        setCats(response);
-        localStorage.setItem('data', JSON.stringify(response));
-        setRecord(records.filter((item) => item !== input).concat(input));
-        if (records.length > 5) setRecord(records.shift());
-      } catch {
-        console.log('input 에러');
+  const onSubmitForm = useCallback(
+    async (e) => {
+      e.preventDefault();
+      if (input === '') alert('검색어를 입력해주세요.');
+      else {
+        try {
+          const response = await getCats(input, setLoading);
+          setCats(response);
+          localStorage.setItem('data', JSON.stringify(response));
+          if (records.length < 5) {
+            console.log(records);
+            setRecord(records.filter((item) => item !== input).concat(input));
+            console.log(records);
+          } else
+            setRecord(
+              records
+                .filter((item) => item !== input)
+                .concat(input)
+                .slice(1),
+            );
+        } catch {
+          console.log('input 에러');
+        }
       }
-    }
-  };
+    },
+    [input, records, setCats, setLoading, setRecord],
+  );
 
-  const onClickButton = async () => {
+  const onClickButton = useCallback(async () => {
     const response = await getRandomCats(setLoading);
     setCats(response);
-  };
+  }, [setCats, setLoading]);
 
   return (
     <Section>

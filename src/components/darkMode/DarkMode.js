@@ -1,7 +1,8 @@
 import { Label } from './Styles';
+import { useCallback } from 'react';
 
 const DarkMode = () => {
-  const onClickDarkMode = (e) => {
+  const onClickDarkMode = useCallback((e) => {
     //현재 OS모드 상태
     const currentmode = window.matchMedia(
       '(prefers-color-scheme: dark)',
@@ -20,7 +21,7 @@ const DarkMode = () => {
     } else if (currentmode && !e.target.checked) {
       document.querySelector('body').className = 'dark';
     }
-  };
+  }, []);
 
   return (
     <Label>
