@@ -2,19 +2,30 @@ import { getCats } from '../../apis/Api';
 import { Section, Card } from './Styles';
 import { useCallback } from 'react';
 
-const Records = ({ records, setCats, setLoading, setInput }) => {
+const Records = ({
+  records,
+  setCats,
+  setLoading,
+  setInput,
+  setCurrentPage,
+  setPageIndex,
+}) => {
   const onClickRecords = useCallback(
     async (item) => {
       try {
         setInput(item);
         const response = await getCats(item, setLoading);
-        setCats(response);
-        localStorage.setItem('data', JSON.stringify(response));
+        setCurrentPage(1);
+        setPageIndex(0);
+        if (response && response.status === 200) {
+          setCats(response.data.data);
+          localStorage.setItem('data', JSON.stringify(response.data.data));
+        }
       } catch {
         console.log('record 에러');
       }
     },
-    [setCats, setInput, setLoading],
+    [setCats, setCurrentPage, setInput, setLoading, setPageIndex],
   );
 
   return (
