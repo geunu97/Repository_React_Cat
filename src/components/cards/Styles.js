@@ -8,6 +8,9 @@ export const Article = styled.article`
 
 export const Section = styled.section`
   margin: 0 5px 10px;
+  &:hover {
+    cursor: pointer;
+  }
   img {
     width: 328px;
     height: 500px;
