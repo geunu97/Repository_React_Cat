@@ -22,7 +22,7 @@ const SearchInput = ({
       const newTimer = setTimeout(async () => {
         if (e.target.value !== '') {
           const response = await getCats(e.target.value, setLoading);
-          setCats(response);
+          if (response && response.status === 200) setCats(response.data.data);
         }
       }, 600);
 
@@ -45,19 +45,19 @@ const SearchInput = ({
       else {
         try {
           const response = await getCats(input, setLoading);
-          setCats(response);
-          localStorage.setItem('data', JSON.stringify(response));
-          if (records.length < 5) {
-            console.log(records);
-            setRecord(records.filter((item) => item !== input).concat(input));
-            console.log(records);
-          } else
-            setRecord(
-              records
-                .filter((item) => item !== input)
-                .concat(input)
-                .slice(1),
-            );
+          if (response && response.status === 200) {
+            setCats(response.data.data);
+            localStorage.setItem('data', JSON.stringify(response.data.data));
+            if (records.length < 5) {
+              setRecord(records.filter((item) => item !== input).concat(input));
+            } else
+              setRecord(
+                records
+                  .filter((item) => item !== input)
+                  .concat(input)
+                  .slice(1),
+              );
+          }
         } catch {
           console.log('input 에러');
         }

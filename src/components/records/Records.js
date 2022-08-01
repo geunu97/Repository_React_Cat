@@ -8,8 +8,10 @@ const Records = ({ records, setCats, setLoading, setInput }) => {
       try {
         setInput(item);
         const response = await getCats(item, setLoading);
-        setCats(response);
-        localStorage.setItem('data', JSON.stringify(response));
+        if (response && response.status === 200) {
+          setCats(response.data.data);
+          localStorage.setItem('data', JSON.stringify(response.data.data));
+        }
       } catch {
         console.log('record 에러');
       }

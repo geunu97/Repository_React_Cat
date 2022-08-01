@@ -8,7 +8,7 @@ export const getCats = async (keyword, setLoading) => {
     setLoading(true);
     const response = await axios.get(`/api/cats/search?q=${keyword}`);
     setLoading(false);
-    return response.data.data;
+    return response;
   } catch {
     setLoading(false);
     alert('에러가 발생했습니다. 다시 입력해 주세요');
