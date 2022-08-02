@@ -1,8 +1,8 @@
 name: Cypress Tests
 
 on:
-  push:
-    branches: [ "actions" ]
+  pull_request:
+    branches: [ "dev" ]
 
 jobs:     
   cypress-test:
@@ -11,7 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         
-      # package.json file 변화 됐는데 package-lock.json은 업데이트 안됐을 때를 위해
+      # package-lock.json && package.json file 동기화
       - name: Install 
         run: rm -f package-lock.json && npm install
 
