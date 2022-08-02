@@ -10,13 +10,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: one
-        run: npm ci
+      # package-lock.json && package.json file 동기화
+      - name: Install
+        run: rm -f package-lock.json && npm install
 
-      - name: two
+      # 빌드
+      - name: Build
         run: npm run build
 
-      # ( Build to ./dist or other directory... )
+      # deploy
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.2
 
