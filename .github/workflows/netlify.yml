@@ -10,10 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      # package-lock.json && package.json file 동기화
-      - name: Install
-        run: rm -f package-lock.json && npm install
-
       # 빌드
       - name: Build
         run: npm run build
