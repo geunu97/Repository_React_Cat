@@ -17,3 +17,7 @@ jobs:
         uses: cypress-io/github-action@v2.2.7
         with:
           start: npm start
+        env:
+          CI: true
+          # pass the Dashboard record key as an environment variable
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
