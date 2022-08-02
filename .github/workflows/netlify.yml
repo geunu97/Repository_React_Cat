@@ -13,6 +13,8 @@ jobs:
       # ( Build to ./dist or other directory... )
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.2
+
+        - name: dir
         run: ls
 
         with:
