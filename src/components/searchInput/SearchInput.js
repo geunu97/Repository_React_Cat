@@ -91,7 +91,7 @@ const SearchInput = ({
     <Section>
       <Form onSubmit={onSubmitForm}>
         <Input
-          placeholder="고양이를 검색해보세요"
+          placeholder="고양이를 검색해보세요."
           onChange={onDebounce}
           value={input}
           autoFocus
