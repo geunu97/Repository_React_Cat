@@ -10,12 +10,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: dir
+        run: ls
+
       # ( Build to ./dist or other directory... )
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.2
-
-      - name: dir
-        run: ls
 
         with:
           publish-dir: './build'
