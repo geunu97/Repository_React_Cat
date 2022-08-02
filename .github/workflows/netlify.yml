@@ -10,18 +10,27 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: build
-        run: npm run build
+      - name: one
+        run: mkdir dist
 
       - name: dir
         run: ls
+
+      - name: two
+        run: cd dist
+
+      - name: dir
+        run: ls
+
+      - name: three
+        run: npm run build
 
       # ( Build to ./dist or other directory... )
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.2
 
         with:
-          publish-dir: './build'
+          publish-dir: './dist'
           production-branch: master
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: 'Deploy from GitHub Actions'
