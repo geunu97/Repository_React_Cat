@@ -87,7 +87,7 @@ const SearchInput = ({
     if (response && response.status === 200) setCats(response.data.data);
   }, [setCats, setCurrentPage, setLoading, setPageIndex]);
 
-  console.log(987654321987654321987654321324);
+  console.log(987654321987654321987654321312324);
 
   return (
     <Section>
