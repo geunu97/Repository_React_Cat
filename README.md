@@ -48,7 +48,7 @@
 
   - 개인 브랜치 작업 -> Master 브랜치로 PR -> 자동 테스팅 -> 테스팅 성공 시 자동 Merge (테스팅 실패 시 Merge 안됨) -> 자동 빌드 후 배포 -> 자동 개인 브랜치 삭제
 
-- <b>Issue와 Pull Requests 문서의 가독성을 위해 형식화 하였습니다.</b>
+- <a href="https://geunu97.tistory.com/75"><b>Issue와 Pull Requests 문서의 가독성을 위해 형식화 하였습니다.</b></a>
 
 ## 문제해결 과정
 
