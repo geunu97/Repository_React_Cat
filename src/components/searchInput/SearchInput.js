@@ -87,6 +87,8 @@ const SearchInput = ({
     if (response && response.status === 200) setCats(response.data.data);
   }, [setCats, setCurrentPage, setLoading, setPageIndex]);
 
+  console.log(987654321987654321987654321);
+
   return (
     <Section>
       <Form onSubmit={onSubmitForm}>
