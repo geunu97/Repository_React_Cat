@@ -31,4 +31,4 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           start: npm start
-    needs: job1
+    needs: start-commenting
