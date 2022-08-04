@@ -3,9 +3,12 @@ name: Cypress Tests
 on:
   pull_request:
     branches: ['master']
+  pull_request_comment:
+    types: [created]
 
 jobs:
   start-commenting:
+    if: contains(github.event.comment.body, 'run tests')
     runs-on: ubuntu-latest
     steps:
       - name: start-commenting
@@ -35,7 +38,7 @@ jobs:
         uses: thollander/actions-comment-pull-request@v1
         with:
           message: |
-            테스트 실패 :+1:
+            테스트 실패 :sob:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - if: ${{ success() }}
