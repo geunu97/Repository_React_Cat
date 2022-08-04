@@ -5,6 +5,17 @@ on:
     branches: ['master']
 
 jobs:
+  start-commenting:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v3
+      - name: start-commenting
+        uses: thollander/actions-comment-pull-request@v1
+        with:
+          message: |
+            Hello world ! :wave:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   cypress-test:
     runs-on: ubuntu-latest
     steps:
@@ -20,3 +31,4 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           start: npm start
+    needs: job1
