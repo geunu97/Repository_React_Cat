@@ -1,6 +1,6 @@
 describe('홈 화면', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000');
+    cy.visit('http://localhostasd:3000');
   });
 
   it('다크모드', () => {
