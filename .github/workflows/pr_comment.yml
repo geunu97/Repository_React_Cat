@@ -1,0 +1,10 @@
+name: pr_comment
+
+on:
+  pull_request_comment:
+    types: [created]
+
+jobs:
+  pr-comment:
+    if: contains(github.event.comment.body, 'run tests')
+    uses: ./.github/workflows/cypress.yml

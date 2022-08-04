@@ -3,12 +3,9 @@ name: Cypress Tests
 on:
   pull_request:
     branches: ['master']
-  pull_request_comment:
-    types: [created]
 
 jobs:
   start-commenting:
-    if: contains(github.event.comment.body, 'run tests')
     runs-on: ubuntu-latest
     steps:
       - name: start-commenting
