@@ -35,7 +35,7 @@ export const Label = styled.label`
     width: 22px;
     left: 4px;
     top: -5px;
-    background-image: url('sun.png');
+    background-image: url('moon.png');
     background-size: 15px;
     background-position: center;
     background-color: #fff;

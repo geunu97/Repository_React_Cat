@@ -43,7 +43,7 @@
 
 - <b>웹 서비스의 안전성을 위해 Master 브랜치가 아닌 개인 브랜치에서 작업하고 있습니다.</b>
   - 바로 Master 브랜치로 Push하지 못하도록 했으며, 반드시 PR을 남겨야 Master 브랜치로 Merge가 가능하도록 했습니다.
-- <b>효율적인 작업 환경이 되도록 모든 과정을 자동화하여 작업 시간을 단축하였습니다.</b>
+- <a href="https://geunu97.tistory.com/83"><b>효율적인 작업 환경이 되도록 모든 과정을 자동화하여 작업 시간을 단축하였습니다.</b></a>
 
   - 개인 브랜치 작업 -> Master 브랜치로 PR -> 자동 테스팅 -> 테스팅 성공 시 자동 Merge (테스팅 실패 시 Merge 안됨) -> 자동 빌드 후 배포 -> 자동 작업 완료 개인 브랜치 삭제
 
@@ -59,7 +59,7 @@
 - <a href="https://geunu97.tistory.com/79">Master 브랜치로 바로 Push 못하도록 하기</a>
 - <a href="https://geunu97.tistory.com/80">Pull Requests에서 테스팅 후 성공시에만 자동 Merge하기</a>
 - <a href="https://geunu97.tistory.com/81">작업 완료 개인 브랜치 자동 삭제하기</a>
-- <a href="https://geunu97.tistory.com/75">Issue와 Pull Requests 문서 형식화</a>
+- <a href="https://geunu97.tistory.com/83">최종 자동화 과정</b></a>
 
 ## 참고 자료
 
