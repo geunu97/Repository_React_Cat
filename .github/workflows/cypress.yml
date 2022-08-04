@@ -32,9 +32,10 @@ jobs:
           start: npm start
     needs: start-commenting
 
-  if: failure()
-    finish-commenting:
-      runs-on: ubuntu-latest
+
+  finish-commenting:
+    runs-on: ubuntu-latest
+    if: failure()
       steps:
         - name: finish-commenting
           uses: thollander/actions-comment-pull-request@v1
