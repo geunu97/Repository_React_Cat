@@ -7,4 +7,4 @@ on:
 jobs:
   pr-comment:
     if: contains(github.event.comment.body, 'run tests')
-    uses: octo-org/example-repo/.github/workflows/cypress.yml.yml@master
+    uses: octo-org/Repository_React_Cat-repo/.github/workflows/cypress.yml.yml@master
