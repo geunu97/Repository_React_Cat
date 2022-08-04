@@ -32,7 +32,7 @@ jobs:
           start: npm start
 
 
-    if: failure()
+      if: failure()
       - name: finish-commenting
         uses: thollander/actions-comment-pull-request@v1
         with:
