@@ -5,6 +5,16 @@ on:
     branches: ['master']
 
 jobs:
+  start-commenting:
+    runs-on: ubuntu-latest
+    steps:
+      - name: start-commenting
+        uses: thollander/actions-comment-pull-request@v1
+        with:
+          message: |
+            테스트 시작.. :mag_right:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   cypress-test:
     runs-on: ubuntu-latest
     steps:
@@ -20,3 +30,19 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           start: npm start
+
+      - if: ${{ failure() }}
+        uses: thollander/actions-comment-pull-request@v1
+        with:
+          message: |
+            테스트 실패 :sob:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - if: ${{ success() }}
+        uses: thollander/actions-comment-pull-request@v1
+        with:
+          message: |
+            테스트 통과 :+1:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    needs: start-commenting
