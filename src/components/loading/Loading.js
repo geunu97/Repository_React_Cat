@@ -2,7 +2,7 @@ import { Section } from './Styles';
 
 const Loading = () => {
   return (
-    <Section>
+    <Section className="loading">
       <p>로딩중...</p>
       <div className="spinner" />
     </Section>
