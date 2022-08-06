@@ -3,6 +3,9 @@
 <p align="center"><a href="https://github.com/geunu97/Repository_VanillaJS_Cat">VanillaJS 고양이 사진관</a>을 React로 전환하여 개발하였습니다.</p>
 <p align="center"><a href="https://geunu-react-cat.netlify.app" title="고양이 사진관">확인하러 가기!</a></p>
 
+## 작업 내용 ([Projects](https://github.com/users/geunu97/projects/1))
+- 내부 코드 전환 작업과 추가 작업 및 자동화 작업을 하였습니다.
+
 ## 내부 전환
 
 |                                                   **바닐라 자바스크립트**                                                    |                                                          **리액트**                                                          |
@@ -39,43 +42,27 @@
 - 테스팅 자동화
 - 빌드 및 배포 자동화
 
-## 작업 방식 및 자동화 <a href="https://github.com/geunu97/Repository_React_Cat/pulls">(Pull Request)</a>
+## 작업 방식 및 자동화
 
-- <b>웹 서비스의 안전성을 위해 Master 브랜치가 아닌 개인 브랜치에서 작업하고 있습니다.</b>
-  - 바로 Master 브랜치로 Push하지 못하도록 했으며, 반드시 PR을 남겨야 Master 브랜치로 Merge가 가능하도록 했습니다.
-- <a href="https://geunu97.tistory.com/83"><b>효율적인 작업 환경이 되도록 모든 과정을 자동화하여 작업 시간을 단축하였습니다.</b></a>
+- <a href="https://geunu97.tistory.com/83"><b>모든 과정을 자동화하여 작업 시간을 단축하였습니다.</b></a>
+ <img width=50% src="https://user-images.githubusercontent.com/73439375/183230687-5e0c9193-e427-4261-88c6-faa5b2a859e1.png">
 
-  - 개인 브랜치 작업 -> Master 브랜치로 PR -> 자동 테스팅 -> 테스팅 결과에 따라 자동 comment 남기기 -> 테스팅 성공 시 자동 Merge (테스팅 실패 시 Merge 안됨) -> 자동 빌드 후 배포 -> 자동 작업 완료 개인 브랜치 삭제
+## 문제해결 과정 ([전체](https://geunu97-9.notion.site/440902f10d1642c1a3c27e584ba56f4c))
 
-- <b>Issue와 Pull Requests 문서의 가독성을 위해 형식화 하였습니다.</b>
-
-## 문제해결 과정
-
-- <a href="https://geunu97-9.notion.site/440902f10d1642c1a3c27e584ba56f4c">전체적인 개발 및 문제해결 과정</a>
 - <a href="https://geunu97.tistory.com/74">useState 비동기 작동과 불변 메서드로 발생한 문제 해결 과정</a>
+- <a href="https://geunu97.tistory.com/78">Dependency, Package-lock-json 동기화 오류</a>
 - <a href="https://geunu97.tistory.com/77">Github actions를 이용한 테스팅 자동화 과정</a>
 - <a href="https://geunu97.tistory.com/82">Github actions를 이용한 빌드 및 배포 자동화 과정</a>
-- <a href="https://geunu97.tistory.com/78">Dependency, Package-lock-json 동기화 오류</a>
-- <a href="https://geunu97.tistory.com/79">Master 브랜치로 바로 Push 못하도록 하기</a>
-- <a href="https://geunu97.tistory.com/80">Pull Requests에서 테스팅 후 성공시에만 자동 Merge하기</a>
-- <a href="https://geunu97.tistory.com/81">작업 완료 개인 브랜치 자동 삭제하기</a>
 - <a href="https://geunu97.tistory.com/84">테스팅 결과에 따라 자동 comment 남기기</a>
+- <a href="https://geunu97.tistory.com/80">Pull Requests에서 테스팅 후 성공시에만 자동 Merge하기</a>
 - <a href="https://geunu97.tistory.com/83">최종 자동화 과정</b></a>
 
-## 참고 자료
-
-- <a href="https://geunu97-6.notion.site/Javascript-JS-6c3e9a89885246e99ca33438609b6fd3">자바스크립트</a>
-- <a href="https://geunu97-6.notion.site/React-48a04ad2c3a141bfb23bfe11e6c20b4c">리액트</a>
 
 ## 좋았던 점
 
-- 리액트의 쉽고 간편한 JSX문법을 사용하여 컴포넌트를 개발하였더니 <a href="https://github.com/geunu97/Repository_VanillaJS_Cat">VanillaJS 고양이 사진관</a>보다 작업 속도가 2주 정도 향상됐습니다.
-- <a href="https://github.com/geunu97/Repository_VanillaJS_Cat">VanillaJS 고양이 사진관</a>에서 class로 개발했던 것을, 리액트에서는 함수로 개발하였는데 더 쉽고 간편하다고 느꼈습니다.
-- 기본적으로 state와 props를 지원해주므로, 상태관리 작업이 편리했습니다.
-- 전체적인 오류를 확인할 기회가 생겼습니다.
-  - 기존에 네트워크 요청의 실패에 대한 처리를 안해줘서 발생한 오류를 발견하여 처리를 했습니다.
-  - Input 공백 입력 시 발생한 오류를 발견하여 처리를 했습니다.
-- 기존에 아쉬웠던 UI를 조금 더 이쁘게 다루는 기회가 됐습니다.
-- 개인 프로젝트의 장점으로써 작업 환경도 구성하여 보고 하고 싶은 것이 있다면 바로 만들어보고 적용할 수 있었습니다.
-- 테스팅과 빌드 및 배포를 자동화 함으로써 작업 속도가 많이 향상 되었습니다.
-
+- innerHTML이 아닌 JSX문법을 이용하여 렌더링 부분을 관리하였더니 쉽고 편했습니다.
+- 전체적인 오류를 확인할 기회가 생겨, 2개의 오류를 개선했습니다.
+    - 기존에 네트워크 요청의 실패에 대한 처리를 안해줘서 발생한 오류를 발견하여 처리를 했습니다.
+    - Input 공백 입력 시 발생한 오류를 발견하여 처리를 했습니다.
+- 개인 프로젝트의 장점으로써 작업 환경을 구성하여 보고 하고 싶은 것이 있다면 바로 만들어보고 적용할 수 있었습니다.
+- 테스팅과 빌드 및 배포를 자동화 함으로써 작업 속도가 많이 향상 될 수 있었습니다.
