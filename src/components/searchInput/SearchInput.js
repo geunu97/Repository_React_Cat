@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef } from 'react';
 import { getCats, getRandomCats } from '../../apis/Api';
 import { Section, Form, Input, Button } from './Styles';
 import { useCallback } from 'react';
@@ -13,15 +13,15 @@ const SearchInput = ({
   setCurrentPage,
   setPageIndex,
 }) => {
-  const [timer, setTimer] = useState(0);
+  const timer = useRef(0);
 
   const onDebounce = useCallback(
     async (e) => {
       setInput(e.target.value);
-      if (timer) {
-        clearTimeout(timer);
+      if (timer.current) {
+        clearTimeout(timer.current);
       }
-      const newTimer = setTimeout(async () => {
+      timer.current = setTimeout(async () => {
         if (e.target.value !== '') {
           const response = await getCats(e.target.value, setLoading);
           setCurrentPage(1);
@@ -29,10 +29,8 @@ const SearchInput = ({
           if (response && response.status === 200) setCats(response.data.data);
         }
       }, 600);
-
-      setTimer(newTimer);
     },
-    [setCats, setCurrentPage, setInput, setLoading, setPageIndex, timer],
+    [setCats, setCurrentPage, setInput, setLoading, setPageIndex],
   );
 
   const onClickInput = useCallback(
