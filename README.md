@@ -5,11 +5,7 @@
 
 ## 작업 내용 ([Projects](https://github.com/users/geunu97/projects/1))
 
-<<<<<<< HEAD
-
-- # 내부 코드 전환 작업과 추가 작업 및 자동화 작업을 하였습니다.
 - 내부 코드 전환, 추가 작업 및 자동화 작업을 하였습니다.
-  > > > > > > > f087082972b091431baa1153880507679f602497
 
 ## 내부 전환
 
@@ -49,19 +45,13 @@
 
 ## 자동화
 
-<<<<<<< HEAD
-
-- <a href="https://geunu97.tistory.com/83"><b>모든 과정을 자동화하여 작업 시간을 단축하였습니다.</b></a>
-  <img width=50% src="https://user-images.githubusercontent.com/73439375/183230687-5e0c9193-e427-4261-88c6-faa5b2a859e1.png">
-  =======
-
 - <a href="https://geunu97.tistory.com/83"><b>작업의 71%를 자동화하여 작업 시간을 단축하였습니다.</b></a>
   <img width=60% src="https://user-images.githubusercontent.com/73439375/183237762-2ff427fd-5f08-4c69-a09a-0747f038a3d2.png">
-  > > > > > > > f087082972b091431baa1153880507679f602497
 
 ## 문제해결 과정 ([전체](https://geunu97-9.notion.site/440902f10d1642c1a3c27e584ba56f4c))
 
 - <a href="https://geunu97.tistory.com/74">useState 비동기 작동과 불변 메서드로 발생한 문제 해결 과정</a>
+- <a href="https://geunu97.tistory.com/86">useRef와 useState의 변화에 따른 렌더링 차이</a>
 - <a href="https://geunu97.tistory.com/77">Github actions를 이용한 테스팅 자동화 과정</a>
 - <a href="https://geunu97.tistory.com/82">Github actions를 이용한 빌드 및 배포 자동화 과정</a>
 - <a href="https://geunu97.tistory.com/84">테스팅 결과에 따라 자동 comment 남기기</a>
