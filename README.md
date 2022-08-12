@@ -37,6 +37,7 @@
 - 검색어 저장 오류 해결
 - 페이지네이션
 - UI 개선
+- Prettier 및 ESLint 설정
 - Issue와 Pull Requests 문서 형식화
 - 테스트 코드
 - 작업 완료 브랜치 삭제 자동화
