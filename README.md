@@ -1,11 +1,21 @@
 <h1 align="center">고양이 사진관</h1>
-<p align="center">바닐라 자바스크립트와 리액트의 차이를 직접 경험해보고 싶어서</p>
-<p align="center"><a href="https://github.com/geunu97/Repository_VanillaJS_Cat">VanillaJS 고양이 사진관</a>을 React로 전환하여 개발하였습니다.</p>
+<p align="center">스킬 향상을 위해<a href="https://github.com/geunu97/Repository_VanillaJS_Cat"> VanillaJS 고양이 사진관</a>을</p>
+<p align="center">React 고양이 사진관으로 전환하여 개발하였습니다.</p>
 <p align="center"><a href="https://geunu-react-cat.netlify.app" title="고양이 사진관">확인하러 가기!</a></p>
+
+## 사용 기술
+
+- 언어: Javascript <br>
+- 라이브러리: React <br>
+- 스타일링: Emotion <br>
+- 테스트: Cypress <br>
+- 자동화: Github Actions <br>
+- 배포: Netlify <br>
+- 정리: Github Projects, Notion, Blog <br>
 
 ## 작업 내용 ([Projects](https://github.com/users/geunu97/projects/1))
 
-- 내부 코드 전환, 추가 작업 및 자동화 작업을 하였습니다.
+- 내부 코드 전환, 추가 작업 및 자동화 작업
 
 ## 내부 전환
 
@@ -58,14 +68,3 @@
 - <a href="https://geunu97.tistory.com/84">테스팅 결과에 따라 자동 comment 남기기</a>
 - <a href="https://geunu97.tistory.com/80">Pull Requests에서 테스팅 후 성공시에만 자동 Merge하기</a>
 - <a href="https://geunu97.tistory.com/83">전체 자동화 과정</b></a>
-
-## 좋았던 점
-
-- innerHTML이 아닌 쉬운 JSX문법을 이용하여 렌더링 부분에 더 집중할 수 있었습니다.
-- 전체적인 오류를 확인할 기회가 생겨, 2개의 오류를 개선했습니다.
-
-  - 기존에 네트워크 요청의 실패에 대한 처리를 안해줘서 발생한 오류를 발견하여 처리를 했습니다.
-  - Input 공백 입력 시 발생한 오류를 발견하여 처리를 했습니다.
-
-- 개인 프로젝트의 장점으로써 100% 작업 환경을 구성하여 보고 하고 싶은 것이 있다면 바로 만들어보고 적용할 수 있었습니다.
-- 테스팅과 빌드 및 배포를 자동화 함으로써 작업 속도가 많이 향상 될 수 있었습니다.
