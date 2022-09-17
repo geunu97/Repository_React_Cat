@@ -54,7 +54,7 @@
 - <a href="https://geunu97.tistory.com/83"><b>작업의 71%를 자동화하여 작업 시간을 단축하였습니다.</b></a>
   <img width=60% src="https://user-images.githubusercontent.com/73439375/183237762-2ff427fd-5f08-4c69-a09a-0747f038a3d2.png">
 
-## 문제해결  ([전체](https://geunu97-9.notion.site/440902f10d1642c1a3c27e584ba56f4c))
+## 문제해결 기록 ([전체](https://geunu97-9.notion.site/440902f10d1642c1a3c27e584ba56f4c))
 
 - <a href="https://geunu97.tistory.com/74">useState 비동기 작동과 불변 메서드로 발생한 문제 해결 과정</a>
 - <a href="https://geunu97.tistory.com/86">useRef와 useState의 변화에 따른 렌더링 차이</a>
